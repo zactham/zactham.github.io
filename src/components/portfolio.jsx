@@ -17,8 +17,8 @@ class Portfolio extends React.Component {
     const slidesAurora = [
       {url: 'https://i.imgur.com/jDw7fx0.png', title: 'Image 1'},
       {url: 'https://i.imgur.com/UF6Jg3Q.png', title: 'Image 2'},
-      {url: 'https://i.imgur.com/f4K4f7F.png', title: 'Image 3'},
-      {url: 'https://i.imgur.com/YBjQka7.png', title: 'Image 4'},
+      {url: 'https://i.imgur.com/0jxZHfH.png', title: 'Image 3'},
+      {url: 'https://i.imgur.com/6jJsVKq.png', title: 'Image 4'},
       {url: 'https://i.imgur.com/QkhE1BK.png', title: 'Image 5'},
       {url: 'https://i.imgur.com/8WYDU2o.jpg', title: 'Image 6'},
     ]

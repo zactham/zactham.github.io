@@ -1,12 +1,10 @@
 import React from "react";
 import myImage from "../img/male1.png";
-import Resume from "../img/Resume.png";
 
 class About extends React.Component {
   constructor() {
     super();
     this.state = {
-      resume: Resume,
       about_me: [
         {
           id: "first-p-about",
