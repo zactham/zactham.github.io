@@ -141,7 +141,7 @@ class Portfolio extends React.Component {
                       
                         <div className="work-content">
                           <div className="row">
-                              <h2 className="w-title">Free IOS Application for investors that buy and sell products on various marketplaces</h2>
+                              <h2 className="w-title">Free IOS Application for e-commerce sellers to easily calculate their profits</h2>
                               <div className="w-more">
                                 <span className="w-ctegory">
                                 XCode Swift ported to React Native JS
@@ -170,7 +170,7 @@ class Portfolio extends React.Component {
                       
                         <div className="work-content">
                           <div className="row">
-                              <h2 className="w-title">Free IOS Application created to teach the basic concepts of investing thru a fun Stock market gaming simulator.  The ability to share scores directly to Twitter or Messages is a unique feature that allows users to compete with friends.  Contains ads through the usage of Google Firebase with the ability to pay for removal.
+                              <h2 className="w-title">Free IOS Application created to teach the basic concepts of investing via a fun Stock market gaming simulator.  The ability to share scores directly to Twitter or Messages is a unique feature that allows users to compete with friends.  Contains ads through the usage of Google Firebase with the ability to pay for removal.
 </h2>
                               <div className="w-more">
                                 <span className="w-ctegory">
