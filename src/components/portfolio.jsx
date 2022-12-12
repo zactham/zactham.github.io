@@ -22,6 +22,7 @@ class Portfolio extends React.Component {
       {url: 'https://i.imgur.com/QkhE1BK.png', title: 'Image 5'},
       {url: 'https://i.imgur.com/8WYDU2o.jpg', title: 'Image 6'},
     ]
+    
     const slidesOsmosis = [
       {url: 'https://i.imgur.com/qQHLVRi.png', title: 'Image 1'},
       {url: 'https://i.imgur.com/14eUgQV.jpg', title: 'Image 2'},
