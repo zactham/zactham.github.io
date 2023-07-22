@@ -76,7 +76,7 @@ class Portfolio extends React.Component {
                     <div className="about-me pt-4 pt-md-0">
                       <div className="title-box-2">
                         <a href="https://github.com/zactham/AuroraProxyDashboardNoKeys" target="_blank" rel="noreferrer noopener">
-                          <h5 className="title-left">TESTING DSAJFLKDAJ</h5>
+                          <h5 className="title-left">TESTING </h5>
                         </a>
                       </div>
                       <div style = {containerStyles}>
