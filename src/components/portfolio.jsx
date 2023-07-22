@@ -43,28 +43,49 @@ class Portfolio extends React.Component {
       {url: 'https://i.imgur.com/MmnFSab.jpg', title: 'Image 5'},
     ]
 
-    const containerStyles = {
+    const commonContainerStyles = {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       width: '100%',
+      margin: '0 auto',
+    };
+    
+    const mediaStyles = {
+      '@media (max-width: 767px)': {
+        width: '90%',
+        height: 'auto',
+      },
+      '@media (min-width: 768px) and (max-width: 1024px)': {
+        width: '80%',
+        height: 'auto',
+      },
+    };
+    
+    const containerStyles = {
+      ...commonContainerStyles,
       height: '480px',
-      margin: '0 auto',
+      ...mediaStyles,
     };
+    
     const containerStylesOsmosis = {
-      width: '30%',
+      ...commonContainerStyles,
       height: '580px',
-      margin: '0 auto',
+      ...mediaStyles,
     };
-
+    
     const containerStylesRC = {
-      width: '40%',
+      ...commonContainerStyles,
       height: '680px',
-      margin: '0 auto',
+      ...mediaStyles,
     };
-
+    
     const containerStylesBM = {
-      width: '30%',
+      ...commonContainerStyles,
       height: '580px',
-      margin: '0 auto',
+      ...mediaStyles,
     };
+    
 
     return (
       <section id="work" className="portfolio-mf sect-pt4 route">
@@ -76,7 +97,7 @@ class Portfolio extends React.Component {
                     <div className="about-me pt-4 pt-md-0">
                       <div className="title-box-2">
                         <a href="https://github.com/zactham/AuroraProxyDashboardNoKeys" target="_blank" rel="noreferrer noopener">
-                          <h5 className="title-left">TESTING </h5>
+                          <h5 className="title-left">Aurora Proxies</h5>
                         </a>
                       </div>
                       <div style = {containerStyles}>
@@ -133,7 +154,7 @@ class Portfolio extends React.Component {
                     <div className="about-me pt-4 pt-md-0">
                       <div className="title-box-2">
                       <a href="https://appadvice.com/app/resell-calculator/1415194685" target="_blank" rel="noreferrer noopener"> 
-                        <h5 className="title-left">testing</h5>
+                        <h5 className="title-left">Resell Calculator</h5>
                       </a>
                       </div>
                       <div style = {containerStylesRC}>
