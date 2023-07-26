@@ -9,17 +9,17 @@ class About extends React.Component {
         {
           id: "first-p-about",
           content:
-            "Hi!  I am a full stack web developer with a background in the the video game and web development industries. I graduated from the University of Maryland in May 2022 with a Bachelor's Degree in Computer Science."
+            "Hello! I'm a dedicated full-stack web developer with a rich history in both the video game and web development sectors. I earned my Bachelor's Degree in Computer Science from the University of Maryland in May 2022."
         },
         {
           id: "second-p-about",
           content:
-            "I prefer to work with React, Node, and Express, but I am always open to learning new technologies. I enjoy working on projects that are challenging and allow me to learn new skills with a strong team.  I am super flexible and outgoing, and I love to work with others.  I am always looking for new opportunities to learn and grow."
+            "While I have a penchant for working with React, Node, and Express, I maintain an ever-evolving mindset, always ready to embrace and master new technologies. What excites me most is diving into challenging projects that stretch my skills, especially when collaborated with a robust team. I bring a flexible, proactive attitude to the table and genuinely cherish team dynamics."
         },
         {
           id: "third-p-about",
           content:
-          "In my freetime I enjoy playing video games, coding, hiking, playing tennis, building businesses, and spending time with my family and friends.  If you would like to get in touch with me, please feel free to reach out to me on LinkedIn or send me an email."
+          "Outside of the professional sphere, I have varied interests ranging from traveling and watching anime to hiking and tennis. I'm also passionate about entrepreneurial ventures and cherish moments spent with family and friends."
         },
         {
           
@@ -48,7 +48,6 @@ class About extends React.Component {
                       );
                     })}
                   </div>
-
                 </div>
               </div>
             </div>

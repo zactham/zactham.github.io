@@ -40,13 +40,6 @@ class Portfolio extends React.Component {
       {url: 'https://i.imgur.com/MmnFSab.jpg', title: 'Image 5'},
     ]
 
-    const imageStyle = {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover' // ensures the aspect ratio is maintained
-    };
-    
-
     const commonContainerStyles = {
       display: 'flex',
       justifyContent: 'center',
