@@ -1,15 +1,12 @@
 import React from "react"; 
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "./ImageSlider/ImageSlider";
 
 class Portfolio extends React.Component {
 
-  
   constructor() {
     super();
     this.state = {
-     
     };
-    
   }
 
   
@@ -42,6 +39,13 @@ class Portfolio extends React.Component {
       {url: 'https://i.imgur.com/MI08T0A.png', title: 'Image 4'},
       {url: 'https://i.imgur.com/MmnFSab.jpg', title: 'Image 5'},
     ]
+
+    const imageStyle = {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover' // ensures the aspect ratio is maintained
+    };
+    
 
     const commonContainerStyles = {
       display: 'flex',
@@ -85,6 +89,8 @@ class Portfolio extends React.Component {
       height: '580px',
       ...mediaStyles,
     };
+
+    
     
 
     return (
@@ -101,7 +107,7 @@ class Portfolio extends React.Component {
                         </a>
                       </div>
                       <div style = {containerStyles}>
-                        <ImageSlider slides={slidesAurora}/>
+                        <ImageSlider slides={slidesAurora} imageScale={90}/>
                       </div>
                       
                         <div className="work-content">
@@ -129,7 +135,7 @@ class Portfolio extends React.Component {
                         </a>
                       </div>
                       <div style = {containerStylesOsmosis}>
-                        <ImageSlider slides={slidesOsmosis}/>
+                        <ImageSlider slides={slidesOsmosis} imageScale={50}/>
                       </div>
                       
                         <div className="work-content">
@@ -141,12 +147,9 @@ class Portfolio extends React.Component {
                                 </span>{" "}
                               </div>
                           </div>
-                        </div>
-                        
+                        </div>   
                     </div>
-                    
                   </div>
-                  
                 </div>
 
                 <div className="box-shadow-full">
@@ -158,12 +161,12 @@ class Portfolio extends React.Component {
                       </a>
                       </div>
                       <div style = {containerStylesRC}>
-                        <ImageSlider slides={slidesResellCalculator}/>
+                        <ImageSlider slides={slidesResellCalculator} imageScale={70}/>
                       </div>
                       
                         <div className="work-content">
                           <div className="row">
-                              <h2 className="w-title">Free IOS Application for e-commerce sellers to easily calculate their profits</h2>
+                              <h2 className="w-title">Free IOS Application for e-commerce sellers to easily calculate their profits.  Slide the wheel to pick desired store based on marketplace's fees.</h2>
                               <div className="w-more">
                                 <span className="w-ctegory">
                                 XCode Swift ported to React Native JS
@@ -171,11 +174,8 @@ class Portfolio extends React.Component {
                               </div>
                           </div>
                         </div>
-                        
                     </div>
-                    
-                  </div>
-                  
+                  </div> 
                 </div>
 
                 <div className="box-shadow-full">
@@ -187,9 +187,9 @@ class Portfolio extends React.Component {
                       </a>
                       </div>
                       <div style = {containerStylesBM}>
-                        <ImageSlider slides={slidesBananaMarket}/>
+                        <ImageSlider slides={slidesBananaMarket} imageScale={65}/>
+
                       </div>
-                      
                         <div className="work-content">
                           <div className="row">
                               <h2 className="w-title">Free IOS Application created to teach the basic concepts of investing via a fun Stock market gaming simulator.  The ability to share scores directly to Twitter or Messages is a unique feature that allows users to compete with friends.  Contains ads through the usage of Google Firebase with the ability to pay for removal.
@@ -200,14 +200,10 @@ class Portfolio extends React.Component {
                                 </span>{" "}
                               </div>
                           </div>
-                        </div>
-                        
+                        </div>  
                     </div>
-                    
                   </div>
-                  
                 </div>
-                
               </div>
           </div>
         </div>

@@ -1,0 +1,68 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-btn {
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: #fff; /* White arrow characters */
+  border: none; /* Removes the default button border */
+  border-radius: 50%; /* Makes the button circular */
+  width: 40px; /* Width of the button */
+  height: 40px; /* Height of the button */
+  display: flex;
+  align-items: center; /* Centers the arrow vertically */
+  justify-content: center; /* Centers the arrow horizontally */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smoothens the background color change */
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker shade when hovered */
+}
+
+.slider-btn:active {
+  background-color: rgba(0, 0, 0, 1); /* Even darker when pressed */
+}
+
+.slider-btn:focus {
+  outline: none; /* Removes the default browser outline on focus. Use this cautiously and ensure there's an alternative focus style or indicator for accessibility reasons */
+}
+
+.slider-btn.slider-btn-prev {
+  margin-right: 10px; /* Adds some space between the left arrow and the image */
+}
+
+.slider-btn.slider-btn-next {
+  margin-left: 10px; /* Adds some space between the right arrow and the image */
+}
+
+
+.slider-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-dot.active {
+  background-color: #333;
+}
