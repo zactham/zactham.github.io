@@ -107,7 +107,7 @@ class Contact extends React.Component {
                           collaboration, or just say hi, I'd love to hear from
                           you.
                           <br />
-                          Simply fill out the from and shoot me an email.
+                          Simply fill out the form and shoot me an email.
                         </p>
                        
                       </div>
