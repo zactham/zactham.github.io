@@ -1,67 +1,106 @@
 .slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  max-width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
 }
 
-.slider-content {
+.slider-img-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%; /* Adjust as needed */
 }
 
-.slider-btn {
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-  color: #fff; /* White arrow characters */
-  border: none; /* Removes the default button border */
-  border-radius: 50%; /* Makes the button circular */
-  width: 40px; /* Width of the button */
-  height: 40px; /* Height of the button */
-  display: flex;
-  align-items: center; /* Centers the arrow vertically */
-  justify-content: center; /* Centers the arrow horizontally */
+.slider-img {
+  /* Your existing styles, plus anything needed for centering */
+  display: block; /* Removes bottom margin/padding typical of inline elements */
+  max-width: 100%; /* Ensures the image does not overflow its container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+
+/* Responsive design for larger screens */
+@media screen and (min-width: 769px) {
+    .slider-img-aurora,
+    .slider-img-resellcalc {
+      max-height: 500px;
+      max-width: auto;
+    }
+  
+    .slider-img-osmosis,
+    .slider-img-banana {
+      max-height: 500px;
+      max-width: 250px;
+    }
+}
+
+/* Responsive design for mobile screens */
+@media screen and (max-width: 768px) {
+  .slider-img-aurora,
+  .slider-img-resellcalc {
+    max-height: 500px; /* Reduced height for mobile */
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .slider-img-osmosis,
+  .slider-img-banana {
+    max-height: 600px; /* Reduced height for mobile */
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+
+/* Navigation buttons */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  color: white;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s; /* Smoothens the background color change */
+  padding: 10px;
+  font-size: 24px;
+  z-index: 10;
+  transition: background 0.3s ease;
 }
 
-.slider-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Darker shade when hovered */
+.slider-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.slider-btn:active {
-  background-color: rgba(0, 0, 0, 1); /* Even darker when pressed */
+.slider-nav-prev {
+  left: 10px;
 }
 
-.slider-btn:focus {
-  outline: none; /* Removes the default browser outline on focus. Use this cautiously and ensure there's an alternative focus style or indicator for accessibility reasons */
+.slider-nav-next {
+  right: 10px;
 }
 
-.slider-btn.slider-btn-prev {
-  margin-right: 10px; /* Adds some space between the left arrow and the image */
-}
-
-.slider-btn.slider-btn-next {
-  margin-left: 10px; /* Adds some space between the right arrow and the image */
-}
-
+/* Pagination dots */
 .slider-pagination {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+  padding: 10px 0;
 }
 
 .slider-dot {
-  width: 8px;
-  height: 8px;
-  margin: 0 5px;
-  background-color: #ddd;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  background: #ddd;
+  margin: 0 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease;
 }
 
+.slider-dot:hover,
 .slider-dot.active {
-  background-color: #333;
+  background: #333;
 }
