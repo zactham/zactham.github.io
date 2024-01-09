@@ -21,7 +21,7 @@ class Contact extends React.Component {
                       </div>
                       <div>
                         <form
-                          action="https://formspree.io/xdoeonlo"
+                          action="https://formspree.io/f/xvoeoezk"
                           method="POST"
                           className="contactForm"
                         >
@@ -113,7 +113,6 @@ class Contact extends React.Component {
                       </div>
                       <div className="socials">
                         <ul>
-                         
                           <li>
                             <a
                               href="https://github.com/zactham"
@@ -136,6 +135,17 @@ class Contact extends React.Component {
                               </span>
                             </a>
                           </li>
+                          <li>
+                              <a
+                                href="https://drive.google.com/file/d/1P1k0uTILRd_ZLQOJ-AYI6MbCLpDizNa8/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <span className="ico-circle">
+                                <i className="ionicons ion-android-document"></i>
+                                </span>
+                              </a>
+                            </li>
                         </ul>
                       </div>
                     </div>
