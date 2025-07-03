@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.47932ca9.chunk.css",
-    "main.js": "/static/js/main.efe8604e.chunk.js",
-    "main.js.map": "/static/js/main.efe8604e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.351e9c47.js",
-    "runtime-main.js.map": "/static/js/runtime-main.351e9c47.js.map",
-    "static/css/2.a417cd58.chunk.css": "/static/css/2.a417cd58.chunk.css",
-    "static/js/2.8e58afdd.chunk.js": "/static/js/2.8e58afdd.chunk.js",
-    "static/js/2.8e58afdd.chunk.js.map": "/static/js/2.8e58afdd.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.8639c4cbc8bad7c5581e0114a60d9ac5.js": "/precache-manifest.8639c4cbc8bad7c5581e0114a60d9ac5.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.a417cd58.chunk.css.map": "/static/css/2.a417cd58.chunk.css.map",
-    "static/css/main.47932ca9.chunk.css.map": "/static/css/main.47932ca9.chunk.css.map",
-    "static/js/2.8e58afdd.chunk.js.LICENSE.txt": "/static/js/2.8e58afdd.chunk.js.LICENSE.txt",
-    "static/media/earth.a08c82a6.jpg": "/static/media/earth.a08c82a6.jpg",
-    "static/media/font-awesome.css": "/static/media/fontawesome-webfont.fee66e71.woff",
-    "static/media/ionicons.css": "/static/media/ionicons.621bd386.svg",
-    "static/media/male1.7b9bb87b.png": "/static/media/male1.7b9bb87b.png",
-    "static/media/programmer.05f035b3.gif": "/static/media/programmer.05f035b3.gif"
+    "main.css": "/react-portfolio/static/css/main.9c206895.chunk.css",
+    "main.js": "/react-portfolio/static/js/main.2abc84bf.chunk.js",
+    "main.js.map": "/react-portfolio/static/js/main.2abc84bf.chunk.js.map",
+    "runtime-main.js": "/react-portfolio/static/js/runtime-main.4a88bb1c.js",
+    "runtime-main.js.map": "/react-portfolio/static/js/runtime-main.4a88bb1c.js.map",
+    "static/css/2.a417cd58.chunk.css": "/react-portfolio/static/css/2.a417cd58.chunk.css",
+    "static/js/2.5e5bca6d.chunk.js": "/react-portfolio/static/js/2.5e5bca6d.chunk.js",
+    "static/js/2.5e5bca6d.chunk.js.map": "/react-portfolio/static/js/2.5e5bca6d.chunk.js.map",
+    "index.html": "/react-portfolio/index.html",
+    "precache-manifest.c0678f6148cd6cf24fae13ca14fe0ac7.js": "/react-portfolio/precache-manifest.c0678f6148cd6cf24fae13ca14fe0ac7.js",
+    "service-worker.js": "/react-portfolio/service-worker.js",
+    "static/css/2.a417cd58.chunk.css.map": "/react-portfolio/static/css/2.a417cd58.chunk.css.map",
+    "static/css/main.9c206895.chunk.css.map": "/react-portfolio/static/css/main.9c206895.chunk.css.map",
+    "static/js/2.5e5bca6d.chunk.js.LICENSE.txt": "/react-portfolio/static/js/2.5e5bca6d.chunk.js.LICENSE.txt",
+    "static/media/Resume.aa36e083.png": "/react-portfolio/static/media/Resume.aa36e083.png",
+    "static/media/earth.a08c82a6.jpg": "/react-portfolio/static/media/earth.a08c82a6.jpg",
+    "static/media/font-awesome.css": "/react-portfolio/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/ionicons.css": "/react-portfolio/static/media/ionicons.621bd386.svg",
+    "static/media/male1.7b9bb87b.png": "/react-portfolio/static/media/male1.7b9bb87b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.351e9c47.js",
+    "static/js/runtime-main.4a88bb1c.js",
     "static/css/2.a417cd58.chunk.css",
-    "static/js/2.8e58afdd.chunk.js",
-    "static/css/main.47932ca9.chunk.css",
-    "static/js/main.efe8604e.chunk.js"
+    "static/js/2.5e5bca6d.chunk.js",
+    "static/css/main.9c206895.chunk.css",
+    "static/js/main.2abc84bf.chunk.js"
   ]
 }
