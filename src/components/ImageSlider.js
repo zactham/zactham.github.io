@@ -1,11 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({ slides, lazy = false }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
     const [imageErrors, setImageErrors] = useState({});
+    const [loadedImages, setLoadedImages] = useState(new Set());
+
+    const handleImageError = useCallback((index) => {
+        setImageErrors(prev => ({
+            ...prev,
+            [index]: true
+        }));
+        console.error(`Failed to load image at index ${index}:`, slides[index]?.url);
+    }, [slides]);
+
+    // Lazy load images as needed
+    const loadImage = useCallback((index) => {
+        if (!lazy || loadedImages.has(index)) return;
+        
+        const img = new Image();
+        img.onload = () => {
+            setLoadedImages(prev => new Set([...prev, index]));
+        };
+        img.onerror = () => {
+            handleImageError(index);
+        };
+        img.src = slides[index]?.url;
+    }, [slides, lazy, loadedImages, handleImageError]);
+
+    // Load current image and adjacent images for better UX
+    useEffect(() => {
+        if (lazy) {
+            loadImage(currentIndex);
+            // Preload adjacent images
+            if (currentIndex > 0) loadImage(currentIndex - 1);
+            if (currentIndex < slides.length - 1) loadImage(currentIndex + 1);
+        }
+    }, [currentIndex, lazy, loadImage, slides.length]);
+
+    // Load first image on mount if lazy loading is enabled
+    useEffect(() => {
+        if (lazy) {
+            loadImage(0);
+        }
+    }, [lazy, loadImage]);
 
     const sliderStyles = {
         height: '100%',
@@ -21,7 +61,9 @@ const ImageSlider = ({ slides }) => {
         borderRadius: '16px',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        backgroundImage: imageErrors[currentIndex] ? 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)' : `url(${slides[currentIndex].url})`,
+        backgroundImage: imageErrors[currentIndex] ? 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)' : 
+                        (lazy && !loadedImages.has(currentIndex)) ? 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)' :
+                        `url(${slides[currentIndex].url})`,
         transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
         cursor: 'pointer',
         display: 'flex',
@@ -112,54 +154,46 @@ const ImageSlider = ({ slides }) => {
         boxShadow: '0 6px 20px rgba(0, 0, 0, 0.25)',
     };
 
-    const goToPrevious = () => {
+    const goToPrevious = useCallback(() => {
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
-    };
+    }, [currentIndex, slides.length]);
 
-    const goToNext = () => {
+    const goToNext = useCallback(() => {
         const isLastSlide = currentIndex === slides.length - 1;
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
-    };
+    }, [currentIndex, slides.length]);
 
-    const goToSlide = (slideIndex) => {
+    const goToSlide = useCallback((slideIndex) => {
         setCurrentIndex(slideIndex);
-    };
+    }, []);
 
-    const handleImageError = (index) => {
-        setImageErrors(prev => ({
-            ...prev,
-            [index]: true
-        }));
-        console.error(`Failed to load image at index ${index}:`, slides[index]?.url);
-    };
-
-    const openLightbox = (index = currentIndex) => {
+    const openLightbox = useCallback((index = currentIndex) => {
         console.log('Opening lightbox for index:', index);
         setLightboxIndex(index);
         setIsLightboxOpen(true);
         document.body.style.overflow = 'hidden';
-    };
+    }, [currentIndex]);
 
-    const closeLightbox = () => {
+    const closeLightbox = useCallback(() => {
         console.log('Closing lightbox');
         setIsLightboxOpen(false);
         document.body.style.overflow = 'unset';
-    };
+    }, []);
 
-    const goToPreviousLightbox = () => {
+    const goToPreviousLightbox = useCallback(() => {
         const isFirstSlide = lightboxIndex === 0;
         const newIndex = isFirstSlide ? slides.length - 1 : lightboxIndex - 1;
         setLightboxIndex(newIndex);
-    };
+    }, [lightboxIndex, slides.length]);
 
-    const goToNextLightbox = () => {
+    const goToNextLightbox = useCallback(() => {
         const isLastSlide = lightboxIndex === slides.length - 1;
         const newIndex = isLastSlide ? 0 : lightboxIndex + 1;
         setLightboxIndex(newIndex);
-    };
+    }, [lightboxIndex, slides.length]);
 
     // Handle keyboard navigation
     useEffect(() => {
@@ -177,7 +211,7 @@ const ImageSlider = ({ slides }) => {
 
         document.addEventListener('keydown', handleKeyDown);
         return () => document.removeEventListener('keydown', handleKeyDown);
-    }, [isLightboxOpen, lightboxIndex]);
+    }, [isLightboxOpen, closeLightbox, goToPreviousLightbox, goToNextLightbox]);
 
     // Cleanup on unmount
     useEffect(() => {
@@ -187,7 +221,7 @@ const ImageSlider = ({ slides }) => {
     }, []);
 
     // Lightbox component
-    const LightboxModal = () => (
+    const LightboxModal = React.memo(() => (
         <div 
             style={{
                 position: 'fixed',
@@ -378,7 +412,7 @@ const ImageSlider = ({ slides }) => {
                 </div>
             )}
         </div>
-    );
+    ));
 
     return (
         <>
@@ -428,22 +462,16 @@ const ImageSlider = ({ slides }) => {
                     }}
                     title="Click to view fullscreen"
                 >
-                    {imageErrors[currentIndex] ? (
+                    {(imageErrors[currentIndex] || (lazy && !loadedImages.has(currentIndex))) && (
                         <div style={{ textAlign: 'center' }}>
-                            <div style={{ fontSize: '24px', marginBottom: '8px' }}>📷</div>
-                            <div>Image not available</div>
+                            <div style={{ fontSize: '24px', marginBottom: '8px' }}>
+                                {lazy && !loadedImages.has(currentIndex) ? '⏳' : '📷'}
+                            </div>
+                            <div>
+                                {lazy && !loadedImages.has(currentIndex) ? 'Loading...' : 'Image not available'}
+                            </div>
                         </div>
-                    ) : null}
-                    {/* Hidden images for preloading */}
-                    {slides.map((slide, index) => (
-                        <img
-                            key={index}
-                            src={slide.url}
-                            alt={slide.title}
-                            style={{ display: 'none' }}
-                            onError={() => handleImageError(index)}
-                        />
-                    ))}
+                    )}
                 </div>
                 
                 {slides.length > 1 && (
@@ -466,4 +494,4 @@ const ImageSlider = ({ slides }) => {
     );
 };
 
-export default ImageSlider;
+export default React.memo(ImageSlider);
