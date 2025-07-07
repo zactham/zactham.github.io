@@ -107,12 +107,13 @@ class Contact extends React.Component {
                           collaboration, or just say hi, I'd love to hear from
                           you.
                           <br />
-                          Simply fill out the form and shoot me an email.
+                          Simply fill out the from and shoot me an email.
                         </p>
                        
                       </div>
                       <div className="socials">
                         <ul>
+                         
                           <li>
                             <a
                               href="https://github.com/zactham"
@@ -136,16 +137,17 @@ class Contact extends React.Component {
                             </a>
                           </li>
                           <li>
-                              <a
-                                href="https://drive.google.com/file/d/1P1k0uTILRd_ZLQOJ-AYI6MbCLpDizNa8/view?usp=sharing"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <span className="ico-circle">
-                                <i className="ionicons ion-android-document"></i>
-                                </span>
-                              </a>
-                            </li>
+                            <a
+                              href="/resume-zac-thamer.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              download
+                            >
+                              <span className="ico-circle">
+                                <i className="ion-ios-paper"></i>
+                              </span>
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./stars.scss";
+import "./stars.css";
 import Typed from "react-typed";
 
 class Intro extends React.Component {
@@ -20,9 +20,9 @@ class Intro extends React.Component {
                 <strong className="text-slider">
                   <Typed
                     strings={[
-                      "Full Stack Developer",
                       "Web Developer",
-                      "Games Programmer",
+                      "AI Prompt Engineer",
+                      "Full Stack Developer",
                     ]}
                     typeSpeed={80}
                     backDelay={1100}

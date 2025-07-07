@@ -1,28 +1,27 @@
 import React from "react";
 import myImage from "../img/male1.png";
+import Resume from "../img/Resume.png";
 
 class About extends React.Component {
   constructor() {
     super();
     this.state = {
+      resume: Resume,
       about_me: [
         {
           id: "first-p-about",
           content:
-            "Hello! I'm a dedicated full-stack web developer with a rich history in both the video game and web development sectors. I earned my Bachelor's Degree in Computer Science from the University of Maryland in May 2022."
+            "Hi! I am a full stack web developer with a background in crypto, web development, and startup industries. I graduated from the University of Maryland in May 2022 with a Bachelor's Degree in Computer Science. I have 4 years of experience in the crypto industry and startup space."
         },
         {
-          id: "second-p-about",
+          id: "ai-p-about",
           content:
-            "While I have a penchant for working with React, Node, and Express, I maintain an ever-evolving mindset, always ready to embrace and master new technologies. What excites me most is diving into challenging projects that stretch my skills, especially when collaborated with a robust team. I bring a flexible, proactive attitude to the table and genuinely cherish team dynamics."
+            "I am highly skilled in a range of AI tools and modern development platforms. I use Replicate for image upscaling, Fox Fetch for AI-powered web scraping, GPT for advanced search and API integration, Claude for coding and automation, and Gemini for Veo3 video creation. My expertise allows me to build intelligent, efficient solutions for a variety of technical challenges."
         },
         {
           id: "third-p-about",
           content:
-          "Outside of the professional sphere, I have varied interests ranging from traveling and watching anime to hiking and tennis. I'm also passionate about entrepreneurial ventures and cherish moments spent with family and friends."
-        },
-        {
-          
+          "In my freetime I enjoy coding, hiking, traveling, playing tennis, building businesses, and spending time with my family and friends. If you would like to get in touch with me, please feel free to reach out to me on LinkedIn or send me an email."
         }
       ]
     };
@@ -48,6 +47,7 @@ class About extends React.Component {
                       );
                     })}
                   </div>
+
                 </div>
               </div>
             </div>

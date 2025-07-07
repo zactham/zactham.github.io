@@ -2,7 +2,8 @@ import React from "react";
 import $ from "jquery";
 
 import logo1 from "../img/male1.png";
-import logo2 from "../img/programmer.gif";
+const coderGif = `${process.env.PUBLIC_URL}/programmer.gif`; // gif icon from public directory
+// import logo2 from "../img/programmer.png"; // Removed old programmer icon
 
 class Navbar extends React.Component {
   constructor() {
@@ -39,7 +40,7 @@ class Navbar extends React.Component {
         document
           .querySelector(".navbar-expand-md")
           .classList.remove("navbar-trans");
-        this.setState({ logo: logo2 });
+        this.setState({ logo: coderGif });
       } else {
         document
           .querySelector(".navbar-expand-md")
@@ -87,11 +88,7 @@ class Navbar extends React.Component {
       >
         <div className="container">
           <a className="navbar-brand js-scroll" href="#page-top">
-            <img
-              src={this.state.logo}
-              alt="logo"
-              style={{ maxWidth: "100px" }}
-            />
+            <img src={this.state.logo} alt="logo" style={{ maxWidth: "100px" }} />
           </a>
           <button
             className="navbar-toggler collapsed"
