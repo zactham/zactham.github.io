@@ -82,6 +82,7 @@ class Portfolio extends React.Component {
         description: "An automated AI news aggregation system that runs daily via GitHub Actions. Collects the latest AI headlines from major tech outlets, tracks AI stock movements, monitors trending AI tools, and delivers formatted digests through intelligent content processing.",
         technologies: ["Python", "GitHub Actions", "OpenAI API", "Fetch Fox API"],
         slides: slidesAINews,
+        link: "#",
         gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         accent: "#667eea"
       },
@@ -105,10 +106,10 @@ class Portfolio extends React.Component {
       },
       {
         title: "🎨 PosterGenAI",
-        description: "An AI-powered poster generation platform for users to pay to generate AI images with prompts, and order those images into physical posters. The process: users submit a prompt and payment via Stripe, the image is generated using the OpenAI API, then upscaled with Replicate API, and after successful Stripe checkout, the final images are sent to a printing service for fulfillment.",
+        description: "An AI-powered poster generation platform (currently in beta) that will allow users to generate AI images with prompts and order them as physical posters. Coming soon! The process: users submit a prompt and payment via Stripe, the image is generated using the OpenAI API, then upscaled with Replicate API, and after successful Stripe checkout, the final images are sent to a printing service for fulfillment.",
         technologies: ["React", "TypeScript", "Python", "AI/ML", "OpenAI API", "Stripe API", "Replicate API"],
         slides: slidesPosterGenAI,
-        link: "#", // Update this with the actual link when available
+        link: "#",
         gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
         accent: "#f093fb"
       },
@@ -146,16 +147,20 @@ class Portfolio extends React.Component {
               >
                 <div className="project-card-inner">
                   <div className="project-header">
-                    <a href={project.link} target="_blank" rel="noreferrer noopener" className="project-link">
+                    {project.link !== "#" ? (
+                      <a href={project.link} target="_blank" rel="noreferrer noopener" className="project-link">
+                        <h3 className="project-name">{project.title}</h3>
+                        <div className="external-link-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15,3 21,3 21,9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                          </svg>
+                        </div>
+                      </a>
+                    ) : (
                       <h3 className="project-name">{project.title}</h3>
-                      <div className="external-link-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                          <polyline points="15,3 21,3 21,9"></polyline>
-                          <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                      </div>
-                    </a>
+                    )}
                   </div>
                   
                   <div className="project-image-container">
